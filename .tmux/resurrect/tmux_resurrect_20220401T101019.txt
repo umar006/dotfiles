@@ -1,0 +1,7 @@
+pane	0	1	1	:*	0	:/home/reborn	1	nvim	:nvim /home/reborn/.config/nvim/init.vim
+pane	0	2	0	:-	0	:/home/reborn/Desktop/latian/flask/first-project	1	nvim	:nvim hello.py
+pane	0	3	0	:	0	:/home/reborn	1	zsh	:
+window	0	1	:nvim	1	:*	bbe2,239x62,0,0,5	:
+window	0	2	:nvim	0	:-	bbdf,239x62,0,0,2	:
+window	0	3	:zsh	0	:	bbe3,239x62,0,0,6	:
+state	0	

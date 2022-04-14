@@ -1,0 +1,6 @@
+pane	0	1	1	:*	0	:/home/reborn/Desktop/test/go	0	nvim	:nvim test.go
+pane	0	1	1	:*	1	:/home/reborn/Desktop/test/go	1	zsh	:
+pane	0	2	0	:-	0	:/home/reborn/Desktop/test/go	1	nvim	:nvim /home/reborn/.config/nvim/init.vim
+window	0	1	:[tmux]	1	:*	6109,239x58,0,0{119x58,0,0,0,119x58,120,0,3}	:
+window	0	2	:nvim	0	:-	d1de,239x58,0,0,1	:
+state	0	

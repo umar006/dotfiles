@@ -1,0 +1,6 @@
+pane	0	1	0	:-	0	:/home/reborn/Desktop/test/go	0	nvim	:nvim test.go
+pane	0	1	0	:-	1	:/home/reborn/Desktop/test/go	1	zsh	:
+pane	0	2	1	:*	0	:/home/reborn/Desktop/test/go	1	sudo	:sudo apt update
+window	0	1	:zsh	0	:-	6108,239x58,0,0{119x58,0,0,0,119x58,120,0,1}	:
+window	0	2	:sudo	1	:*	d1df,239x58,0,0,2	:
+state	0	

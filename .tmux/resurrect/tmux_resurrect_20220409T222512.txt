@@ -1,0 +1,5 @@
+pane	0	1	1	:*	0	:/home/reborn/Desktop/test/go	0	nvim	:nvim ping-pong-referee.go
+pane	0	1	1	:*	1	:/home/reborn/Desktop/test/go	0	nvim	:nvim test.go
+pane	0	1	1	:*	2	:/home/reborn/Desktop/test/go	1	go	:/home/reborn/.asdf/installs/golang/1.18/go/bin/go run --race test.go
+window	0	1	:go	1	:*	0b74,239x58,0,0{119x58,0,0[119x29,0,0,0,119x28,0,30,2],119x58,120,0,1}	:
+state	0	
