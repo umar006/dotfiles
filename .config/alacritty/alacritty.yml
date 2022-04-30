@@ -1,3 +1,6 @@
+env:
+  WINIT_X11_SCALE_FACTOR: "1.0"
+
 # Window Customization
 window:
   dimensions:
@@ -17,10 +20,6 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-
-dpi:
-  x: 80
-  y: 80
 
 # Font Customization
 font:
