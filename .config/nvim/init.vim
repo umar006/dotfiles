@@ -29,7 +29,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Git
   Plug 'lewis6991/gitsigns.nvim'
 
-  Plug 'chriskempson/base16-vim'
+  Plug 'morhetz/gruvbox'
+  " Plug 'chriskempson/base16-vim'
   Plug 'folke/lsp-colors.nvim'
 
   " Tree
@@ -112,12 +113,14 @@ set clipboard+=unnamedplus
 "   let base16colorspace=256          " Remove this line if not necessary
 "   source ~/.vimrc_background
 " endif
-colorscheme base16-gruvbox-dark-pale
+colorscheme gruvbox
+set background=dark
 highlight Normal guibg=none
 " }}}
 
 " {{{ Setting
-let g:python3_host_prog = '/home/reborn/.virtualenvs/boiler-plate/bin/python3'
+" let g:python3_host_prog = '/home/reborn/.virtualenvs/boiler-plate/bin/python3'
+let g:python3_host_prog = '/home/reborn/.asdf/shims/python'
 let g:completion_matching_stategy_list = ['exact', 'substring', 'fuzzy']
 let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
@@ -426,6 +429,13 @@ EOF
 " {{{ Mappings
 " Toogle search highlight
 nnoremap <F10> :set hlsearch!<CR>
+nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
+nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
+nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
+
+nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
 " {{{ Lua tree
 nnoremap <c-b> :NvimTreeToggle<CR>
