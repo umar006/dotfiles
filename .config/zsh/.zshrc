@@ -12,7 +12,17 @@ eval "$(starship init zsh)"
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+
+alias tmc="nvim ~/.config/tmux/tmux.conf"
 alias vrc='nvim ~/.config/nvim/init.vim'
+alias zrc="nvim ~/.config/zsh/.zshrc"
+
+# connect wifi
+alias cwla="nmcli d"
+alias cwl="nmcli d wifi list"
+alias cwc="nmcli d wifi connect"
+
+alias sorc="source $HOME/.config/zsh/.zshrc"
 
 COMPLETION_WAITING_DOTS="true"
 
