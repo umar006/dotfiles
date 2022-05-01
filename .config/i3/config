@@ -30,6 +30,12 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Enable tranparent
+exec_always compton -f -m 0.8
+
+# Set backgroud
+exec nitroge --restore
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -138,7 +144,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="Alacritty"] $ws1
 assign [class="Brave-browser"] $ws2
 assign [class="Google-chrome"] $ws3
-assign [class="Spotify"] $ws4
+for_window [class="Spotify"] move to workspace $ws4
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -181,8 +187,22 @@ bar {
         position top
 }
 
+set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+y mode "$mode_system"
+
 # Lock screen
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec i3lock -c 6d4675
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -198,6 +218,3 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
-# Enable tranparent
-exec_always compton
