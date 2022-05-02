@@ -15,7 +15,7 @@ alias vim='nvim'
 
 alias tmc="nvim ~/.config/tmux/tmux.conf"
 alias vrc='nvim ~/.config/nvim/init.vim'
-alias zrc="nvim ~/.config/zsh/.zshrc"
+alias zrc="nvim ~/.zshrc"
 
 # connect wifi
 alias cwla="nmcli d"
@@ -28,7 +28,7 @@ alias tns="tmux new-session -s halo"
 alias tas="tmux attach -t halo"
 alias tsc="tmux switch-client -t"
 
-alias sorc="source $HOME/.config/zsh/.zshrc"
+alias sorc="source ~/.zshrc"
 
 COMPLETION_WAITING_DOTS="true"
 
