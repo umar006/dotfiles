@@ -22,6 +22,12 @@ alias cwla="nmcli d"
 alias cwl="nmcli d wifi list"
 alias cwc="nmcli d wifi connect"
 
+# tmux setting
+alias tls="tmux list-sessions"
+alias tns="tmux new-session -s halo"
+alias tas="tmux attach -t halo"
+alias tsc="tmux switch-client -t"
+
 alias sorc="source $HOME/.config/zsh/.zshrc"
 
 COMPLETION_WAITING_DOTS="true"
