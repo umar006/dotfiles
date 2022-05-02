@@ -14,7 +14,7 @@ window:
   # decorations: none
   dynamic_title: true
   opacity: 0.9
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
 # Scroll Customization
 scrolling:
