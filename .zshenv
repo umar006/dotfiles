@@ -12,7 +12,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Virtualenvwrapper settings:
-export WORKON_HOME="$HOME/.virtualenvsa"
+export WORKON_HOME="$HOME/.virtualenvs"
 export PROJECT_HOME="$HOME/Devel"
 export VIRTUALENVWRAPPER_PYTHON="$HOME/.asdf/shims/python3"
 export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
