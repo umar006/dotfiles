@@ -2,35 +2,39 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/share/i3blocks/$BLOCK_NAME
+separator=true
 separator_block_width=15
-markup=none
+markup=pango
 
 # Generic media player support
 #
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 [mediaplayer]
+command=./blocklets/mediaplayer/mediaplayer
+label=
 instance=spotify
 interval=5
 signal=10
 
-[memory]
-label=MEM
-interval=30
+[bandwith]
+command=./blocklets/bandwidth2/bandwidth2
+interval=persist
+label=
 
 [cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
+command=./blocklets/cpu_usage/cpu_usage
+label=
+interval=5
 
-[volume]
-label=VOL
-interval=1
+[memory]
+command=./blocklets/memory/memory
+label=
+interval=5
 
-[battery]
-label=BAT
-interval=1
+[battery2]
+command=./blocklets/battery2/battery2
+interval=5
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
