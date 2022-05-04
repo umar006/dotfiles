@@ -1,7 +1,0 @@
-pane	0	1	0	:-	0	:/home/reborn	1	nvim	:nvim .tmux.conf
-pane	0	2	0	:	0	:/home/reborn/Desktop/latian/flask/first-project	1	nvim	:nvim hello.py
-pane	0	3	1	:*	0	:/home/reborn/.local/bin	1	zsh	:
-window	0	1	:nvim	0	:-	d1e5,239x58,0,0,8	:
-window	0	2	:nvim	0	:	d1de,239x58,0,0,1	:
-window	0	3	:zsh	1	:*	d1e0,239x58,0,0,3	:
-state	0	

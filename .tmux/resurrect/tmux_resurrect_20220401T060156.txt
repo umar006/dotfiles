@@ -1,5 +1,0 @@
-pane	0	1	0	:-	0	:/home/reborn/Desktop/latian/flask/first-project	1	nvim	:nvim /home/reborn/.config/nvim/init.vim
-pane	0	2	1	:*	0	:/home/reborn/Desktop/latian/flask/first-project	1	nvim	:nvim hello.py
-window	0	1	:nvim	0	:-	bbdd,239x62,0,0,0	:
-window	0	2	:nvim	1	:*	bbde,239x62,0,0,1	:
-state	0	

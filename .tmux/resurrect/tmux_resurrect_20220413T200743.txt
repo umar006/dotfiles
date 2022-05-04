@@ -1,7 +1,0 @@
-pane	0	1	1	:*	0	:/home/reborn/Desktop/test/go/connect-db/nosql	1	nvim	:nvim connect-nosql.go
-pane	0	1	1	:*	1	:/home/reborn/Desktop/test/go/connect-db	0	zsh	:
-pane	0	1	1	:*	2	:/home/reborn/Desktop/test/go/connect-db	0	docker	:docker exec -it go-test-mongodb mongo
-pane	0	2	0	:-	0	:/home/reborn/Desktop/test/go/connect-db/nosql	1	zsh	:
-window	0	1	:nvim	1	:*	39b1,239x58,0,0{119x58,0,0,0,119x58,120,0[119x29,120,0,2,119x28,120,30,3]}	:
-window	0	2	:zsh	0	:-	d1de,239x58,0,0,1	:
-state	0	

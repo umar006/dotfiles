@@ -1,4 +1,0 @@
-pane	0	1	1	:*	0	:/home/reborn/Desktop/test/go	0	nvim	:nvim test.go
-pane	0	1	1	:*	1	:/home/reborn/Desktop/test/go	1	zsh	:
-window	0	1	:zsh	1	:*	6108,239x58,0,0{119x58,0,0,0,119x58,120,0,1}	:
-state	0	
