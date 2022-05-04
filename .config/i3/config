@@ -194,6 +194,16 @@ bar {
         status_command i3status | python3 ~/.config/i3status/scripts/i3spotifystatus/pystatus.py
         position top
         font pango:CaskaydiaCove Nerd Font 10
+
+        colors {
+            background #282828
+            statusline #ebdbb2
+
+            focused_workspace  #4c7899 #458588 #ebdbb2
+            active_workspace   #333333 #98971a #ebdbb2
+            urgent_workspace   #2f343a #cc241d #ebdbb2
+            binding_mode       #2f343a #cc241d #ebdbb2
+        }
 }
 
 set $mode_system System (l) lock, (e) logout, (r) reboot, (Shift+s) shutdown
