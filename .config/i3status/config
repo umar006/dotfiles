@@ -45,12 +45,12 @@ battery all {
 }
 
 cpu_usage {
-        format = " %usage"
+        format = " %usage"
         separator_block_width = 20
 }
 
 memory {
-        format = " %available"
+        format = " %available"
         threshold_degraded = "1G"
         threshold_critical = "500M"
         separator_block_width = 20
