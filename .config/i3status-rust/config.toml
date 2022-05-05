@@ -1,0 +1,48 @@
+[icons]
+name = "awesome"
+
+[theme]
+name = "gruvbox-dark"
+[theme.overrides]
+separator=""
+
+[[block]]
+block = "music"
+format = "{combo}"
+[block.icons_overrides]
+music = "\uf001 "
+
+[[block]]
+block = "net"
+format = " {ssid}{speed_up;K}{speed_down;K}"
+
+[[block]]
+block = "disk_space"
+format = "{icon} {available}"
+warning = 0
+interval = 30
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_used}"
+clickable=false
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+show_volume_when_muted = true
+headphones_indicator = true
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a, %d %B %Y %T"
+
+[[block]]
+block = "battery"
+full_format = " {percentage}"
+if_command = "test -e /sys/class/power_supply/BAT0"
