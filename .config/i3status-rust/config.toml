@@ -8,7 +8,8 @@ separator=""
 
 [[block]]
 block = "music"
-format = "{combo}"
+player = "spotify"
+hide_when_empty = true
 [block.icons_overrides]
 music = "\uf001 "
 
