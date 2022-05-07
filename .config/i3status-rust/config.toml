@@ -12,36 +12,50 @@ player = "spotify"
 hide_when_empty = true
 [block.icons_overrides]
 music = "\uf001 "
-
-[[block]]
-block = "net"
-format = " {ssid}{speed_up;K}{speed_down;K}"
+[block.theme_overrides]
+info_bg = "#79740e"
 
 [[block]]
 block = "disk_space"
-format = "{icon} {available}"
+format = "{icon}{available}"
 warning = 0
 interval = 30
+[block.theme_overrides]
+idle_bg = "#076678"
 
 [[block]]
 block = "memory"
 display_type = "memory"
 format_mem = "{mem_used}"
 clickable=false
+[block.theme_overrides]
+idle_bg = "#8f3f71"
 
 [[block]]
 block = "cpu"
 interval = 1
+[block.theme_overrides]
+idle_bg = "#427b58"
 
 [[block]]
-block = "sound"
-show_volume_when_muted = true
-headphones_indicator = true
+block = "net"
+format = " {ssid}{speed_up;K}{speed_down;K}"
+[block.theme_overrides]
+idle_bg = "#689d6a"
 
 [[block]]
 block = "time"
 interval = 1
 format = "%a, %d %B %Y %T"
+[block.theme_overrides]
+idle_bg = "#b16286"
+
+[[block]]
+block = "sound"
+show_volume_when_muted = true
+headphones_indicator = true
+[block.theme_overrides]
+idle_bg = "#d65d0e"
 
 [[block]]
 block = "battery"
