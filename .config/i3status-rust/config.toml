@@ -39,16 +39,9 @@ idle_bg = "#427b58"
 
 [[block]]
 block = "net"
-format = " {ssid}{speed_up;K}{speed_down;K}"
+format = " {ssid}{speed_down;K}{speed_up;K}"
 [block.theme_overrides]
 idle_bg = "#689d6a"
-
-[[block]]
-block = "time"
-interval = 1
-format = "%a, %d %B %Y %T"
-[block.theme_overrides]
-idle_bg = "#b16286"
 
 [[block]]
 block = "sound"
@@ -61,3 +54,10 @@ idle_bg = "#d65d0e"
 block = "battery"
 full_format = " {percentage}"
 if_command = "test -e /sys/class/power_supply/BAT0"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a, %d %B %Y %T"
+[block.theme_overrides]
+idle_bg = "#b16286"
