@@ -21,7 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
   Plug 'onsails/lspkind-nvim'
   Plug 'L3MON4D3/LuaSnip'
   Plug 'saadparwaiz1/cmp_luasnip'
@@ -30,17 +29,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'lewis6991/gitsigns.nvim'
 
   Plug 'morhetz/gruvbox'
-  " Plug 'chriskempson/base16-vim'
   Plug 'folke/lsp-colors.nvim'
 
   " Tree
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'kyazdani42/nvim-tree.lua'
-  " Plug 'akinsho/bufferline.nvim'
-  " Plug 'preservim/nerdtree' |
-  "           \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-  "           \ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
-  "           \ Plug 'ryanoasis/vim-devicons'
 
   " Status line
   Plug 'nvim-lualine/lualine.nvim'
@@ -260,7 +253,6 @@ local source_mapping = {
     buffer = "[Buffer]",
     nvim_lsp = "[LSP]",
     nvim_lua = "[Lua]",
-    cmp_tabnine = "[TN]",
     path = "[Path]",
 }
 
@@ -336,24 +328,12 @@ cmp.setup({
             --vim_item.kind = lspkind.presets.default[vim_item.kind]
             vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
             local menu = source_mapping[entry.source.name]
-            if entry.source.name == 'cmp_tabnine' then
-                if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-                    menu = entry.completion_item.data.detail .. ' ' .. menu
-                end
-                vim_item.kind = ''
-            end
             vim_item.menu = menu
             return vim_item
         end
     },
     sources = {
-        -- tabnine completion? yayaya
-        -- { name = "cmp_tabnine" },
-
         { name = "nvim_lsp" },
-
-        -- For vsnip user.
-        -- { name = 'vsnip' },
 
         -- For luasnip user.
         { name = "luasnip" },
