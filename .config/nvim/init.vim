@@ -113,7 +113,7 @@ highlight Normal guibg=none
 
 " {{{ Setting
 " let g:python3_host_prog = '/home/reborn/.virtualenvs/boiler-plate/bin/python3'
-let g:python3_host_prog = '/home/reborn/.asdf/shims/python'
+let g:python3_host_prog = '$HOME/.asdf/shims/python3'
 let g:completion_matching_stategy_list = ['exact', 'substring', 'fuzzy']
 let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
@@ -190,12 +190,6 @@ require('lualine').setup {
         section_separators = { left = '', right = '' }
     }
 }
-EOF
-" }}} 2
-
-" {{{ Tabline
-lua << EOF
---require('bufferline').setup {}
 EOF
 " }}} 2
 
