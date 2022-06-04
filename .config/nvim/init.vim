@@ -120,7 +120,7 @@ let g:neoformat_basic_format_trim = 1
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * undojoin | lua vim.lsp.buf.formatting_sync()
 augroup END
 " }}}
 
@@ -374,8 +374,8 @@ require("lspconfig").pyright.setup {
 require("lspconfig").gopls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-    -- cmd = { "gopls", "serve" },
-    -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    cmd = { "gopls", "serve" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
             analyses = {
@@ -416,12 +416,6 @@ nnoremap <c-b> :NvimTreeToggle<CR>
 nnoremap <leader>b :NvimTreeFocus<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>n :NvimTreeFindFile<CR>
-
-" NerdTree
-" nnoremap <c-b> :NERDTreeToggle<CR>
-" nnoremap <leader>b :NERDTreeFocus<CR>
-" nnoremap <leader>r :NvimTreeRefresh<CR>
-" nnoremap <leader>n :NvimTreeFindFile<CR>
 " }}}2
 
 " {{{ Resize split windows using arrow keys
