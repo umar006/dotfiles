@@ -5,13 +5,12 @@ alias upgrade='sudo apt upgrade'
 alias install='sudo apt install'
 alias remove='sudo apt remove'
 
-export ZSH="/home/reborn/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 eval "$(starship init zsh)"
 
 alias v='nvim'
 alias vi='nvim'
-alias vim='nvim'
 
 alias tmc="nvim ~/.config/tmux/tmux.conf"
 alias vrc='nvim ~/.config/nvim/init.vim'
@@ -49,6 +48,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias config='/usr/bin/git --git-dir=/home/reborn/dotfiles/ --work-tree=/home/reborn'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
