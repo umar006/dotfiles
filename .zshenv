@@ -18,13 +18,11 @@ export VIRTUALENVWRAPPER_PYTHON="$HOME/.asdf/shims/python3"
 export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
 
 # Programming languages and their dependenices
-export GOBIN="$HOME/.asdf/shims/go"
 export LOCALBIN="$HOME/.local/bin"
 export NVIMBIN="$HOME/neovim/bin"
 export YARNBIN="$HOME/.yarn/bin"
 
 # PATH configuration
-export PATH="$GOBIN:$PATH"
 export PATH="$LOCALBIN:$PATH"
 export PATH="$NVIMBIN:$PATH"
 export PATH="$YARNBIN:$PATH"
