@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
 
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
@@ -29,7 +30,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'lewis6991/gitsigns.nvim'
 
   Plug 'morhetz/gruvbox'
+  Plug 'catppuccin/nvim', {'as': 'catppuccin'}
   Plug 'folke/lsp-colors.nvim'
+  Plug 'joshdick/onedark.vim'
+  Plug 'sheerun/vim-polyglot'
 
   " Tree
   Plug 'kyazdani42/nvim-web-devicons'
@@ -102,10 +106,8 @@ set clipboard+=unnamedplus
 " }}}
 
 " {{{ Color scheme
-" if filereadable(expand("~/.vimrc_background"))
-"   let base16colorspace=256          " Remove this line if not necessary
-"   source ~/.vimrc_background
-" endif
+syntax on
+" colorscheme onedark
 colorscheme gruvbox
 set background=dark
 highlight Normal guibg=none
@@ -343,6 +345,11 @@ EOF
 lua << EOF
 local lspconfig = require 'lspconfig'
 local util = require "lspconfig/util"
+local opts = { noremap=true, silent=true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true }
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
