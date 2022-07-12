@@ -124,6 +124,7 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | lua vim.lsp.buf.formatting_sync()
 augroup END
+autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " }}}
 
 " {{{ Lua
@@ -197,7 +198,15 @@ EOF
 
 " {{{ Treesitter
 lua << EOF
-require'nvim-treesitter.configs'.setup {}
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
+    indent = {
+        enable = true,
+    },
+}
 EOF
 " }}} 2
 
