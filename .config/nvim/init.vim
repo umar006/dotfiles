@@ -225,15 +225,6 @@ require'nvim-tree'.setup {
         dotfiles = true,
     },
 }
-
-vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    folder = {
-        arrow_open = "",
-        arrow_closed = "",
-    }
-}
 EOF
 " }}} 2
 
