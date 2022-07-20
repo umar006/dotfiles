@@ -25,6 +25,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'onsails/lspkind-nvim'
   Plug 'L3MON4D3/LuaSnip'
   Plug 'saadparwaiz1/cmp_luasnip'
+  Plug 'rafamadriz/friendly-snippets'
 
   " Git
   Plug 'lewis6991/gitsigns.nvim'
@@ -69,6 +70,7 @@ set hidden
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set shiftround
 set expandtab
 set smartindent
 set cursorline
@@ -109,6 +111,8 @@ set clipboard+=unnamedplus
 syntax on
 " colorscheme onedark
 colorscheme gruvbox
+" let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+" colorscheme catppuccin
 set background=dark
 highlight Normal guibg=none
 " }}}
@@ -129,6 +133,12 @@ autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
 " {{{ Lua
 
+" {{{ Colorscheme
+lua << EOF
+require("catppuccin").setup{}
+EOF
+" }}} 2
+"
 " {{{ Telescope
 lua << EOF
 require'telescope'.setup{}
@@ -203,9 +213,6 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
-    indent = {
-        enable = true,
-    },
 }
 EOF
 " }}} 2
@@ -242,6 +249,7 @@ EOF
 lua << EOF
 -- Setup lua-snip
 local luasnip = require 'luasnip'
+require("luasnip.loaders.from_vscode").lazy_load()
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -406,6 +414,11 @@ require("lspconfig").dockerls.setup {
 }
 
 require("lspconfig").vimls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+require("lspconfig").html.setup{
     on_attach = on_attach,
     capabilities = capabilities
 }
