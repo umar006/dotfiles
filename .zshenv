@@ -21,8 +21,13 @@ export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
 export LOCALBIN="$HOME/.local/bin"
 export NVIMBIN="$HOME/neovim/bin"
 export YARNBIN="$HOME/.yarn/bin"
+# export GOPATH="/home/reborn/.asdf/installs/golang/1.18.4/packages/bin"
+export GOPATH="$HOME/go"
+export GOBIN="$HOME/go/bin"
 
 # PATH configuration
 export PATH="$LOCALBIN:$PATH"
 export PATH="$NVIMBIN:$PATH"
 export PATH="$YARNBIN:$PATH"
+export PATH="$GOBIN:$PATH"
+export PATH="$PATH:/usr/local/go/bin"

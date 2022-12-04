@@ -7,9 +7,9 @@ window:
   dimensions:
     columns: 140
     lines: 38
-  padding:
-    x: 1
-    y: 1
+  # padding:
+  #   x: 1
+  #   y: 1
 
   dynamic_padding: true
   # decorations: none

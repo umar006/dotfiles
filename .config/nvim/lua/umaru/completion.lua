@@ -58,34 +58,29 @@ cmp.setup({
         ['<C-n>'] = cmp.mapping.select_next_item(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
+        ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
+          -- behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         },
-        ['<Tab>'] = function(fallback)
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_jumpable() then
-            luasnip.expand_or_jump()
-          -- elseif has_words_before() then
-          --   cmp.complete()
-          else
-            fallback()
-          end
-        end,
-        -- ['<S-Tab>'] = function(fallback)
+        
+        -- ['<Tab>'] = function(fallback)
         --   if cmp.visible() then
-        --     cmp.select_prev_item()
-        --   elseif luasnip.jumpable(-1) then
-        --     luasnip.jump(-1)
+        --     cmp.select_next_item()
+        --   elseif luasnip.expand_or_jumpable() then
+        --     luasnip.expand_or_jump()
+        --   -- elseif has_words_before() then
+        --   --   cmp.complete()
         --   else
         --     fallback()
         --   end
         -- end,
     },
     formatting = {
+        -- format = lspkind.cmp_format({
+        --     symbol_map = cmp_kinds,
+        -- })
         format = function(entry, vim_item)
             --vim_item.kind = lspkind.presets.default[vim_item.kind]
             vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind

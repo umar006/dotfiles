@@ -14,11 +14,6 @@ vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
 require("catppuccin").setup{
     transparent_background = true,
-    integrations = {
-        nvimtree = {
-            transparent_panel = true,
-        },
-    },
 }
 
 require("kanagawa").setup{
@@ -27,9 +22,8 @@ require("kanagawa").setup{
 
 vim.cmd("colorscheme " .. vim.g.umaru_colorscheme)
 
-vim.cmd[[highlight Normal guibg=none]]
+-- vim.cmd[[highlight Normal guibg=none]]
 vim.cmd[[highlight SignColumn guibg=none]]
 vim.cmd[[highlight LineNr guifg=#7aa2f7]]
 vim.cmd[[highlight VertSplit guifg=#7aa2f7]]
-
 

@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-context'
 
   " LSP
   Plug 'neovim/nvim-lspconfig'
@@ -35,11 +36,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
   Plug 'rebelot/kanagawa.nvim'
   Plug 'folke/lsp-colors.nvim'
-  Plug 'sheerun/vim-polyglot'
+  " Plug 'sheerun/vim-polyglot'
 
   " Tree
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'kyazdani42/nvim-tree.lua'
+  " Plug 'kyazdani42/nvim-tree.lua'
 
   " Status line
   Plug 'nvim-lualine/lualine.nvim'
@@ -70,20 +71,6 @@ autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
 " {{{ Mappings
 " Toogle search highlight
 nnoremap <F10> :set hlsearch!<CR>
-" nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-" nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-" nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-
-" nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-" nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-" nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
-
-" {{{ Lua tree
-nnoremap <c-b> :NvimTreeToggle<CR>
-nnoremap <leader>b :NvimTreeFocus<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-" }}}2
 
 " {{{ Resize split windows using arrow keys
 noremap <c-up> <c-w>+
@@ -99,14 +86,6 @@ inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
-" }}}2
-
-" {{{ Telescope config
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " }}}2
 
 " {{{ Other
