@@ -1,13 +1,15 @@
 local set = vim.opt
 
-set.path = "**"
-set.wildignore = {"*.pyc", "*_build/*", "**/coverage/*", "**/node_modules/*", "**/.git/*"}
+-- set.path = "**"
+-- set.wildignore = {"*.pyc", "*_build/*", "**/coverage/*", "**/node_modules/*", "**/.git/*"}
 
 set.guicursor = ""
-set.errorbells = false
 
 set.number = true
 set.relativenumber = true
+set.cursorline = true
+
+set.completeopt = 'menuone,noselect'
 
 set.tabstop = 4
 set.shiftwidth = 4
@@ -18,36 +20,48 @@ set.smartindent = true
 
 set.wrap = false
 set.splitright = true
-set.splitbelow = true
 
 set.swapfile = false
 set.backup = false
-set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.undofile = true
 
 set.hlsearch = false
 set.incsearch = true
+set.ignorecase = true
+set.smartcase = true
 
 set.termguicolors = true
 
 set.scrolloff = 8
 set.sidescrolloff = 8
 set.signcolumn = "yes"
-set.isfname:append("@-@")
 
 set.laststatus = 3
 set.showtabline = 2
--- Give more space for displaying messages.
 set.cmdheight = 1
 
--- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
--- delays and poor user experience.
 set.updatetime = 50
 
--- Don't pass messages to |ins-completion-menu|.
-set.shortmess:append("c")
-
 set.colorcolumn = "80"
-set.foldmethod = "marker"
-set.pumheight = 20
+set.pumheight = 10
 set.clipboard = "unnamedplus"
+
+vim.api.nvim_create_autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+    group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+    callback = function()
+        vim.opt.foldmethod     = 'expr'
+        vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+        vim.opt.foldenable     = false
+    end
+})
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
