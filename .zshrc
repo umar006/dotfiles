@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 alias update='sudo dnf check-update'
-alias upgrade='sudo dnf upgrade'
+alias upgrade='sudo dnf upgrade -y && flatpak update -y'
 alias install='sudo dnf install'
 alias remove='sudo dnf remove'
 
@@ -13,7 +13,7 @@ alias v='nvim'
 alias vi='nvim'
 
 alias tmc="nvim ~/.config/tmux/tmux.conf"
-alias vrc='nvim ~/.config/nvim'
+alias vrc='cd ~/.config/nvim && nvim .'
 alias zrc="nvim ~/.zshrc"
 
 # connect wifi
@@ -30,7 +30,7 @@ alias sorc="source ~/.zshrc"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
-plugins=(asdf git sudo zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(asdf git sudo fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
