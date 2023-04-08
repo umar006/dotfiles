@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
@@ -119,6 +129,16 @@ _G.packer_plugins = {
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -144,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -160,10 +185,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
-    load_after = {},
     loaded = true,
-    needs_bufread = false,
-    path = "/home/reborn/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-context",
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-treesitter-textobjects"] = {
@@ -172,6 +195,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -183,10 +211,20 @@ _G.packer_plugins = {
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  playground = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/playground",
+    url = "https://github.com/nvim-treesitter/playground"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/reborn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/reborn/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope-fzf-native.nvim"] = {
     cond = { true },
@@ -247,7 +285,6 @@ time([[Conditional loading of telescope-fzf-native.nvim]], false)
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
-vim.cmd [[ packadd nvim-treesitter-context ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

@@ -35,10 +35,15 @@ return require("packer").startup(function(use)
 		requires = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+			"onsails/lspkind.nvim",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 		},
 	})
+
+	use("ray-x/lsp_signature.nvim")
 
 	use({ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
@@ -46,6 +51,7 @@ return require("packer").startup(function(use)
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
 	})
+	use("nvim-treesitter/playground")
 
 	use({ -- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
@@ -76,6 +82,7 @@ return require("packer").startup(function(use)
 
 	-- Formatter
 	use("sbdchd/neoformat")
+	use("jose-elias-alvarez/null-ls.nvim")
 
 	-- Colorscheme
 	-- use('morhetz/gruvbox')
@@ -83,12 +90,13 @@ return require("packer").startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("folke/tokyonight.nvim")
 	use("navarasu/onedark.nvim")
+	use({ "rose-pine/neovim", as = "rose-pine" })
 
 	-- Statusline
 	use({ "nvim-lualine/lualine.nvim" })
 
 	-- Icon
-	-- use('kyazdani42/nvim-web-devicons')
+	use("kyazdani42/nvim-web-devicons")
 
 	if packer_bootstrap then
 		require("packer").sync()
