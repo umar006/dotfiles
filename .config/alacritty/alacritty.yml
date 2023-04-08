@@ -1,6 +1,6 @@
 env:
   WINIT_X11_SCALE_FACTOR: "1.0"
-  # TERM: "xterm-256color"
+  # TERM: "screen-256color"
 
 # Window Customization
 window:
@@ -19,17 +19,32 @@ scrolling:
 
 # Font Customization
 font:
+  # JetBrains
   normal:
-    family: "JetBrainsMono Nerd Font"
+    # family: "JetBrainsMono Nerd Font"
+    # style: Regular
+  # bold:
+    # family: "JetBrainsMono Nerd Font"
+    # style: Bold
+  # italic:
+    # family: "JetBrainsMono Nerd Font"
+    # style: Italic
+  # bold_italic:
+    # family: "JetBrainsMono Nerd Font"
+    # style: Bold Italic
+
+  # FiraCode
+  normal:
+    family: "FiraCode Nerd Font Mono"
     style: Regular
   bold:
-    family: "JetBrainsMono Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Bold
   italic:
-    family: "JetBrainsMono Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "JetBrainsMono Nerd Font"
+    family: "FiraCode Nerd Font Mono"
     style: Bold Italic
   size: 12
   scale_with_dpi: true
