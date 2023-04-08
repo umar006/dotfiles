@@ -1,33 +1,22 @@
 [icons]
-name = "awesome"
+icons = "awesome5"
 
 [theme]
-name = "gruvbox-dark"
+theme = "gruvbox-dark"
 [theme.overrides]
 separator=""
 
 [[block]]
-block = "music"
-player = "spotify"
-hide_when_empty = true
-[block.icons_overrides]
-music = "\uf001 "
-[block.theme_overrides]
-info_bg = "#79740e"
-
-[[block]]
 block = "disk_space"
-format = "{icon}{available}"
-warning = 0
+# format = " $icon $available "
+warning = 5
 interval = 30
 [block.theme_overrides]
 idle_bg = "#076678"
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used}"
-clickable=false
+format = " $icon$mem_used($mem_used_percents) "
 [block.theme_overrides]
 idle_bg = "#8f3f71"
 
@@ -39,7 +28,7 @@ idle_bg = "#427b58"
 
 [[block]]
 block = "net"
-format = " {ssid}{speed_down;K}{speed_up;K}"
+format = " $icon  $ssid ^icon_net_down $speed_down.eng(prefix:K) ^icon_net_up $speed_up.eng(prefix:K) "
 [block.theme_overrides]
 idle_bg = "#689d6a"
 
@@ -52,12 +41,13 @@ idle_bg = "#d65d0e"
 
 [[block]]
 block = "battery"
-full_format = " {percentage}"
-if_command = "test -e /sys/class/power_supply/BAT0"
+# full_format = " $icon  $percentage "
+# if_command = "test -e /sys/class/power_supply/BAT0"
 
 [[block]]
 block = "time"
 interval = 1
-format = "%a, %d %B %Y %T"
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a, %d %B %Y %T') "
 [block.theme_overrides]
 idle_bg = "#b16286"

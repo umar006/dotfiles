@@ -6,17 +6,6 @@ separator=true
 separator_block_width=15
 markup=pango
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-[mediaplayer]
-command=./blocklets/mediaplayer/mediaplayer
-label=
-instance=spotify
-interval=5
-signal=10
-
 [bandwith]
 command=./blocklets/bandwidth2/bandwidth2
 interval=persist
