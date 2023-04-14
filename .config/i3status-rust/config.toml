@@ -16,7 +16,7 @@ idle_bg = "#076678"
 
 [[block]]
 block = "memory"
-format = " $icon$mem_used($mem_used_percents) "
+# format = " $icon $mem_used($mem_used_percents) "
 [block.theme_overrides]
 idle_bg = "#8f3f71"
 
@@ -41,7 +41,7 @@ idle_bg = "#d65d0e"
 
 [[block]]
 block = "battery"
-# full_format = " $icon  $percentage "
+full_format = " $icon  $percentage "
 # if_command = "test -e /sys/class/power_supply/BAT0"
 
 [[block]]
