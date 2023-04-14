@@ -204,7 +204,7 @@ client.background       #FFFFFF
 bar {
         status_command ~/.cargo/bin/i3status-rs
         position top
-        font pango:JetBrainsMono Nerd Font, FontAwesome 10
+        font pango:JetBrainsMono Nerd Font, Font Awesome 6 Free 10
 
         colors {
             background #282828
