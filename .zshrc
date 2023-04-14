@@ -23,7 +23,7 @@ alias cwc="nmcli d wifi connect"
 
 # tmux setting
 alias tls="tmux list-sessions"
-alias tns="tmux new-session -s"
+alias tns="tmux new-session -s $(basename $(pwd))"
 alias tas="tmux attach -t"
 
 alias sorc="source ~/.zshrc"
@@ -37,5 +37,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.local/bin/virtualenvwrapper.sh
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
