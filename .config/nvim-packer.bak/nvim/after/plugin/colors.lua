@@ -21,10 +21,11 @@ function ColorMyPencils(color, transparent)
 		},
 	})
 
-	color = color or "catppuccin-mocha"
+	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 
 	vim.api.nvim_set_hl(0, "VertSplit", { fg = "#7aa2f7" })
+	vim.api.nvim_set_hl(0, "FloatBorder", { fg = "white" })
 end
 
 ColorMyPencils("rose-pine", false)

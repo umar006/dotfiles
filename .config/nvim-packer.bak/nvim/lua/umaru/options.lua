@@ -1,15 +1,13 @@
 local set = vim.opt
 
--- set.path = "**"
--- set.wildignore = {"*.pyc", "*_build/*", "**/coverage/*", "**/node_modules/*", "**/.git/*"}
-
 set.guicursor = ""
 
 set.number = true
 set.relativenumber = true
 set.cursorline = true
 
-set.completeopt = "menu,menuone,noselect"
+-- Set completeopt to have a better completion experience
+set.completeopt = 'menuone,noselect'
 
 set.tabstop = 4
 set.shiftwidth = 4
@@ -26,7 +24,6 @@ set.backup = false
 set.undofile = true
 
 set.hlsearch = false
-set.incsearch = true
 set.ignorecase = true
 set.smartcase = true
 
@@ -40,7 +37,10 @@ set.laststatus = 3
 set.showtabline = 2
 set.cmdheight = 1
 
-set.updatetime = 50
+-- Decrease update time
+set.updatetime = 250
+set.timeout = true
+set.timeoutlen = 300
 
 set.colorcolumn = "80"
 set.pumheight = 10
@@ -48,15 +48,6 @@ set.clipboard = "unnamedplus"
 
 set.foldmethod = "indent"
 set.foldenable = false
-
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufAdd", "BufNew", "BufNewFile", "BufWinEnter" }, {
--- 	group = vim.api.nvim_create_augroup("TS_FOLD_WORKAROUND", {}),
--- 	callback = function()
--- 		vim.opt.foldmethod = "expr"
--- 		vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
--- 		vim.opt.foldenable = false
--- 	end,
--- })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
