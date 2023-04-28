@@ -26,6 +26,9 @@ alias tls="tmux list-sessions"
 alias tns="tmux new-session -s $(basename $(pwd))"
 alias tas="tmux attach -t"
 
+alias dvorak="setxkbmap -layout \"us\" -variant \"dvorak\""
+alias qwerty="setxkbmap -layout \"us\""
+
 alias sorc="source ~/.zshrc"
 
 bindkey -s ^f "tmux-sessionizer\n"
