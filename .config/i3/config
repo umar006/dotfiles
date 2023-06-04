@@ -32,7 +32,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Enable tranparent
-exec_always compton -f
+exec_always --no-startup-id picom -b
 
 # Set backgroud
 # exec_always nitrogen --restore
