@@ -37,7 +37,7 @@ plugins=(asdf docker git sudo fzf zsh-yarn-completions zsh-autosuggestions zsh-s
 
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.local/bin/virtualenvwrapper.sh
+# source $HOME/.local/bin/virtualenvwrapper.sh
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
