@@ -10,10 +10,10 @@ set.cursorline = true
 -- Set completeopt to have a better completion experience
 set.completeopt = "menuone,noselect"
 
--- set.tabstop = 4
--- set.shiftwidth = 4
--- set.softtabstop = 4
--- set.expandtab = true
+set.tabstop = 4
+set.shiftwidth = 4
+set.softtabstop = 4
+set.expandtab = true
 set.shiftround = true
 set.smartindent = true
 set.autoindent = true
@@ -140,10 +140,17 @@ function ColorMyPencils(color, transparent)
 		transparent_background = transparent or false,
 	})
 
+  local config = require("gruvbox").config
+  local colors = require("gruvbox.palette").get_base_colors(vim.o.background, config.contrast)
 	require("gruvbox").setup({
 		invert_selection = true,
 		contrast = "hard",
 		transparent_mode = transparent or false,
+    overrides = {
+      LspReferenceRead = { fg = colors.yellow, bg = "#403d52", bold = true },
+      LspReferenceText = { fg = colors.yellow, bg = "#403d52", bold = true },
+      LspReferenceWrite = { fg = colors.orange, bg = "#403d52", bold = true },
+    }
 	})
 
 	require("rose-pine").setup({
