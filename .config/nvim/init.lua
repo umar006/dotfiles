@@ -50,6 +50,7 @@ set.clipboard = "unnamedplus"
 
 set.foldmethod = "indent"
 set.foldenable = false
+set.showmode = false
 
 -- [[ Basic Keymaps ]]
 
@@ -140,17 +141,17 @@ function ColorMyPencils(color, transparent)
 		transparent_background = transparent or false,
 	})
 
-  local config = require("gruvbox").config
-  local colors = require("gruvbox.palette").get_base_colors(vim.o.background, config.contrast)
+	local config = require("gruvbox").config
+	local colors = require("gruvbox.palette").get_base_colors(vim.o.background, config.contrast)
 	require("gruvbox").setup({
-		invert_selection = true,
+		invert_selection = false,
 		contrast = "hard",
 		transparent_mode = transparent or false,
-    overrides = {
-      LspReferenceRead = { fg = colors.yellow, bg = "#403d52", bold = true },
-      LspReferenceText = { fg = colors.yellow, bg = "#403d52", bold = true },
-      LspReferenceWrite = { fg = colors.orange, bg = "#403d52", bold = true },
-    }
+		overrides = {
+			LspReferenceRead = { fg = colors.yellow, bg = colors.bg3, bold = true },
+			LspReferenceText = { fg = colors.yellow, bg = colors.bg3, bold = true },
+			LspReferenceWrite = { fg = colors.orange, bg = colors.bg3, bold = true },
+		},
 	})
 
 	require("rose-pine").setup({
