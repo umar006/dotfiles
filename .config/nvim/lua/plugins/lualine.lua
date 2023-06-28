@@ -9,7 +9,6 @@ return {
 			section_separators = "",
 		},
 		sections = {
-			lualine_a = {},
 			lualine_c = {
 				{
 					"filename",
