@@ -122,12 +122,12 @@ schemes:
     primary:
       background: "0x232136"
       foreground: "0xe0def4"
-    cursor:
-      text: "0xe0def4"
-      cursor: "0x56526e"
-    vi_mode_cursor:
-      text: "0xe0def4"
-      cursor: "0x56526e"
+    # cursor:
+    #   text: "0xe0def4"
+    #   cursor: "0x56526e"
+    # vi_mode_cursor:
+    #   text: "0xe0def4"
+    #   cursor: "0x56526e"
     line_indicator:
       foreground: None
       background: None
