@@ -5,7 +5,7 @@ return {
 		{ "williamboman/mason.nvim", config = true },
 		"williamboman/mason-lspconfig.nvim",
 
-		{ "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim", opts = {}, tag = "legacy" },
 
 		"folke/neodev.nvim",
 	},
@@ -95,18 +95,18 @@ return {
 				buffer = bufnr,
 				callback = vim.lsp.buf.clear_references,
 			})
-			vim.api.nvim_create_autocmd("ModeChanged", {
-				group = group,
-				buffer = bufnr,
-				callback = function()
-					vim.schedule(function()
-						local t = vim.fn.mode()
-						if string.match(t, "[vV\x16]") then
-							vim.lsp.buf.clear_references()
-						end
-					end)
-				end,
-			})
+			-- vim.api.nvim_create_autocmd("ModeChanged", {
+			-- 	group = group,
+			-- 	buffer = bufnr,
+			-- 	callback = function()
+			-- 		vim.schedule(function()
+			-- 			local t = vim.fn.mode()
+			-- 			if string.match(t, "[vV\x16]") then
+			-- 				vim.lsp.buf.clear_references()
+			-- 			end
+			-- 		end)
+			-- 	end,
+			-- })
 		end
 
 		local on_attach = function(client, bufnr)

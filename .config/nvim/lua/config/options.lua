@@ -1,5 +1,4 @@
 -- [[ Setting options ]]
--- See `:help vim.o`
 local set = vim.opt
 
 set.guicursor = ""
@@ -14,9 +13,10 @@ set.completeopt = "menuone,noselect"
 set.tabstop = 4
 set.shiftwidth = 4
 set.softtabstop = 4
-set.shiftround = true
 set.expandtab = true
+set.shiftround = true
 set.smartindent = true
+set.autoindent = true
 
 set.wrap = false
 set.splitright = true
@@ -50,4 +50,4 @@ set.clipboard = "unnamedplus"
 
 set.foldmethod = "indent"
 set.foldenable = false
-
+set.showmode = false
