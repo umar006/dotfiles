@@ -43,27 +43,6 @@ return {
 			border = "rounded",
 		})
 
-		local lsp_formatting = function(bufnr)
-			local filetype = vim.bo.filetype
-			local n = require("null-ls")
-			local s = require("null-ls.sources")
-			local method = n.methods.FORMATTING
-			local available_formatters = s.get_available(filetype, method)
-
-			vim.lsp.buf.format({
-				filter = function(client)
-					if #available_formatters > 0 then
-						return client.name == "null-ls"
-					elseif client.supports_method("textDocument/formatting") then
-						return true
-					else
-						return false
-					end
-				end,
-				bufnr = bufnr,
-			})
-		end
-
 		local document_hightlight = function(client, bufnr)
 			local status_ok, highlight_supported = pcall(function()
 				return client.supports_method("textDocument/documentHighlight")
@@ -136,10 +115,6 @@ return {
 				vim.lsp.buf.signature_help,
 				{ buffer = bufnr, desc = "Signature Documentation" }
 			)
-
-			vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-				lsp_formatting(bufnr)
-			end, { desc = "Format current buffer with LSP" })
 
 			document_hightlight(client, bufnr)
 		end
