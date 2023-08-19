@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+ZOXIDE_RESULT=$(zoxide query $1)
+
+# if empty exit
+if [ -z "$ZOXIDE_RESULT" ]; then
+	exit 0
+fi
+
+# get folder name
+SELECTED_NAME=$(basename $ZOXIDE_RESULT)
+# check if tmux already running
+TMUX_RUNNING=$(pgrep tmux)
+
+if [[ -z $TMUX ]]; then
+	if [[ -z $TMUX_RUNNING ]]; then
+		tmux new-session -s $SELECTED_NAME -c $ZOXIDE_RESULT
+	elif ! tmux has-session -t=$SELECTED_NAME 2>/dev/null; then
+		tmux new-session -s $SELECTED_NAME -c $ZOXIDE_RESULT
+	else
+		tmux attach -t $SELECTED_NAME
+	fi
+elif ! tmux has-session -t=$SELECTED_NAME 2>/dev/null; then
+	tmux new-session -ds $SELECTED_NAME -c $ZOXIDE_RESULT
+	tmux switch-client -t $SELECTED_NAME
+else
+	tmux switch-client -t $SELECTED_NAME
+fi
