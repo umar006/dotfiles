@@ -1,5 +1,4 @@
 return {
-	-- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		{ "williamboman/mason.nvim", config = true },
@@ -10,6 +9,8 @@ return {
 		"folke/neodev.nvim",
 	},
 	config = function()
+		require("neodev").setup()
+
 		vim.diagnostic.config({
 			virtual_text = true,
 			underline = true,
@@ -130,10 +131,8 @@ return {
 			},
 		}
 
-		require("neodev").setup()
-
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		local mason_lspconfig = require("mason-lspconfig")
 

@@ -6,13 +6,12 @@ return { -- Highlight, edit, and navigate code
 	},
 	build = ":TSUpdate",
 	config = function()
-		-- [[ Configure Treesitter ]]
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = { "c", "cpp", "go", "lua", "python", "rust", "tsx", "typescript", "vimdoc", "vim" },
+		local options = {
+			ensure_installed = { "go", "lua", "python", "tsx", "typescript", "javascript", "html", "css" },
 
 			auto_install = false,
 
-			highlight = { enable = true },
+			highlight = { enable = true, use_languagetree = false },
 			indent = { enable = true, disable = { "python" } },
 			incremental_selection = {
 				enable = true,
@@ -67,6 +66,8 @@ return { -- Highlight, edit, and navigate code
 					},
 				},
 			},
-		})
+		}
+
+		require("nvim-treesitter.configs").setup(options)
 	end,
 }

@@ -37,7 +37,10 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							lsp_formatting(bufnr)
+							local file_path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
+							if not string.find(file_path, "siklus/backyard/routes") then
+								lsp_formatting(bufnr)
+							end
 						end,
 					})
 				end

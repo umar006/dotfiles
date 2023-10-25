@@ -24,15 +24,18 @@ function ColorMyPencils(color, transparent)
 	})
 
 	local config = require("gruvbox").config
-	local colors = require("gruvbox.palette").get_base_colors(vim.o.background, config.contrast)
+	local colors = require("gruvbox").palette
+	local auto_colors = {
+		bg3 = config.contrast == "hard" and colors.dark3 or colors.light3,
+	}
 	require("gruvbox").setup({
 		invert_selection = false,
 		contrast = "hard",
 		transparent_mode = transparent or false,
 		overrides = {
-			LspReferenceRead = { fg = colors.yellow, bg = colors.bg3, bold = true },
-			LspReferenceText = { fg = colors.yellow, bg = colors.bg3, bold = true },
-			LspReferenceWrite = { fg = colors.orange, bg = colors.bg3, bold = true },
+			LspReferenceRead = { fg = colors.neutral_yellow, bg = colors.dark3, bold = true },
+			LspReferenceText = { fg = colors.neutral_yellow, bg = colors.dark3, bold = true },
+			LspReferenceWrite = { fg = colors.neutral_orange, bg = colors.dark3, bold = true },
 		},
 	})
 
