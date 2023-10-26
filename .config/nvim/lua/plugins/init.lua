@@ -5,7 +5,7 @@ return {
 	"tpope/vim-repeat",
 	"tpope/vim-surround",
 	"tpope/vim-commentary",
-	"tpope/vim-sleuth",
+	-- "tpope/vim-sleuth",
 
 	-- Colorizer
 	{
@@ -16,26 +16,6 @@ return {
 	},
 
 	"theprimeagen/harpoon",
-
-	"folke/zen-mode.nvim",
-	{
-		"folke/twilight.nvim",
-		config = function()
-			require("zen-mode").setup({
-				plugins = {
-					tmux = { enabled = true },
-				},
-			})
-		end,
-	},
-
-	-- Colorscheme
-	{ "ellisonleao/gruvbox.nvim", lazy = false, priority = 1000, config = true },
-	{ "folke/tokyonight.nvim" },
-	{ "navarasu/onedark.nvim" },
-	{ "catppuccin/nvim" },
-	{ "rose-pine/neovim" },
-	"arcticicestudio/nord-vim",
 
 	{ -- Adds git releated signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
@@ -72,4 +52,7 @@ return {
 			},
 		},
 	},
+
+	-- -- Formatter
+	-- { "mhartington/formatter.nvim" },
 }
