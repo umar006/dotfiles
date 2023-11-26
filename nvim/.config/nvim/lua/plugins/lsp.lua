@@ -77,42 +77,8 @@ return {
         end
 
         local on_attach = function(client, bufnr)
-            local nmap = function(keys, func, desc)
-                if desc then
-                    desc = "LSP: " .. desc
-                end
-
-                vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
-            end
-
-            nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-            nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-            nmap("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-            nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-            nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-            nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-            nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-            nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-            nmap("<leader>re", require("telescope.builtin").resume, "[R][e]sume")
-
-            nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-            vim.keymap.set(
-                { "i", "n" },
-                "<C-k>",
-                vim.lsp.buf.signature_help,
-                { buffer = bufnr, desc = "Signature Documentation" }
-            )
-
             document_hightlight(client, bufnr)
         end
-
-        local servers = {
-            gopls = {},
-            tsserver = {},
-            lua_ls = {},
-            eslint = {},
-        }
 
         -- local capabilities = vim.lsp.protocol.make_client_capabilities()
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -120,7 +86,7 @@ return {
         local mason_lspconfig = require("mason-lspconfig")
 
         mason_lspconfig.setup({
-            ensure_installed = vim.tbl_keys(servers),
+            ensure_installed = { "gopls", "tsserver", "lua_ls", "eslint", "cssls", "html" },
         })
 
         mason_lspconfig.setup_handlers({
@@ -128,7 +94,6 @@ return {
                 require("lspconfig")[server_name].setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
-                    settings = servers[server_name],
                 })
             end,
 
@@ -144,6 +109,8 @@ return {
 
                 local lspconfig = require("lspconfig")
                 lspconfig.tsserver.setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
                     commands = {
                         OrganizeImports = {
                             organize_imports,
@@ -156,6 +123,8 @@ return {
             ["gopls"] = function()
                 local lspconfig = require("lspconfig")
                 lspconfig.gopls.setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
                     cmd = { "gopls", "serve" },
                     settings = {
                         gopls = {
@@ -173,6 +142,8 @@ return {
             ["lua_ls"] = function()
                 local lspconfig = require("lspconfig")
                 lspconfig.lua_ls.setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
                     on_init = function(client)
                         local path = client.workspace_folders[1].name
                         if
