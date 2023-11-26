@@ -108,19 +108,7 @@ return {
         end
 
         local servers = {
-            gopls = {
-                cmd = { "gopls", "serve" },
-                settings = {
-                    gopls = {
-                        completeUnimported = true,
-                        usePlaceholders = true,
-                        analyses = {
-                            unusedparams = true,
-                        },
-                        staticcheck = true,
-                    },
-                },
-            },
+            gopls = {},
             tsserver = {},
             lua_ls = {
                 Lua = {
@@ -159,13 +147,29 @@ return {
                     vim.lsp.buf.execute_command(params)
                 end
 
-                require("lspconfig").tsserver.setup({
-                    on_attach = on_attach,
-                    capabilities = capabilities,
+                local lspconfig = require("lspconfig")
+                lspconfig.tsserver.setup({
                     commands = {
                         OrganizeImports = {
                             organize_imports,
                             description = "Organize Imports",
+                        },
+                    },
+                })
+            end,
+
+            ["gopls"] = function()
+                local lspconfig = require("lspconfig")
+                lspconfig.gopls.setup({
+                    cmd = { "gopls", "serve" },
+                    settings = {
+                        gopls = {
+                            completeUnimported = true,
+                            usePlaceholders = true,
+                            analyses = {
+                                unusedparams = true,
+                            },
+                            staticcheck = true,
                         },
                     },
                 })
