@@ -7,6 +7,8 @@ return {
     "tpope/vim-commentary",
     "tpope/vim-sleuth",
 
+    { "theprimeagen/harpoon" },
+
     -- Colorizer
     {
         "norcalli/nvim-colorizer.lua",
@@ -15,11 +17,10 @@ return {
         end,
     },
 
-    "theprimeagen/harpoon",
-
     { -- Adds git releated signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
         opts = {
+            numhl = true,
             signs = {
                 add = { text = "┃" },
                 change = { text = "┃" },
