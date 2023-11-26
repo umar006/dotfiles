@@ -39,7 +39,7 @@ opt.sidescrolloff = 8
 opt.signcolumn = "yes"
 
 opt.laststatus = 3
--- opt.showtabline = 2
+opt.showtabline = 2
 
 -- -- Decrease update time
 opt.updatetime = 50
