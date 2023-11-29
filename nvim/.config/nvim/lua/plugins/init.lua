@@ -50,11 +50,7 @@ return {
                         path = 1,
                     },
                 },
-                -- lualine_x = {},
             },
         },
     },
-
-    -- -- Formatter
-    -- { "mhartington/formatter.nvim" },
 }
