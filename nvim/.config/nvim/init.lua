@@ -33,7 +33,6 @@ require("lazy").setup({
                 "logiPat",
                 "man",
                 "matchit",
-                "matchparen",
                 "remote_plugins",
                 "rplugin",
                 "rrhelper",
