@@ -51,10 +51,6 @@ return {
                         require("luasnip").lsp_expand(args.body)
                     end,
                 },
-                -- window = {
-                --   completion = cmp.config.window.bordered(),
-                --   documentation = cmp.config.window.bordered(),
-                -- },
                 formatting = {
                     format = lspkind.cmp_format({
                         mode = "text", -- show only symbol annotations
