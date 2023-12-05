@@ -49,9 +49,9 @@ opt.colorcolumn = "80"
 opt.pumheight = 10
 opt.clipboard = "unnamedplus"
 
--- opt.foldmethod = "indent"
--- opt.foldenable = false
--- opt.showmode = false
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
 
 -- Options from lazyvim
 opt.autowrite = true -- Enable auto write
