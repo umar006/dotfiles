@@ -65,6 +65,15 @@ return {
                     })
                 end,
 
+                ["biome"] = function()
+                    local util = require("lspconfig.util")
+                    local lspconfig = require("lspconfig")
+                    lspconfig.biome.setup({
+                        root_dir = util.root_pattern("biome.json"),
+                        single_file_support = false,
+                    })
+                end,
+
                 ["tsserver"] = function()
                     local function organize_imports()
                         local params = {
