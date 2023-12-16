@@ -28,6 +28,11 @@ return {
                     crust = "#000000",
                 },
             },
+            custom_highlights = function(colors)
+                return {
+                    TreesitterContext = { bg = colors.surface2 },
+                }
+            end,
         },
     },
     {
