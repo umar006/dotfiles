@@ -87,7 +87,13 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.tsserver.setup({
                         capabilities = capabilities,
-                        on_attach = on_attach,
+                        on_attach = function(client, bufnr)
+                            document_hightlight(client, bufnr)
+
+                            -- this is important, otherwise tsserver will format ts/js
+                            -- files which we *really* don't want.
+                            client.server_capabilities.documentFormattingProvider = false
+                        end,
                         commands = {
                             OrganizeImports = {
                                 organize_imports,
