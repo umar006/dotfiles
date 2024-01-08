@@ -1,3 +1,4 @@
+local slow_format_filetypes = {}
 return {
     {
         "stevearc/conform.nvim",
@@ -54,15 +55,33 @@ return {
                 go = { "goimports", "gofumpt" },
                 json = { "jq" },
                 sh = { "shfmt" },
-                ["_"] = { "trim_whitespace" },
+                yaml = { "prettierd" },
+                ["*"] = { "trim_whitespace", "trim_newlines" },
+                ["_"] = { "trim_whitespace", "trim_newlines" },
             },
-            format_on_save = function()
+            format_on_save = function(bufnr)
                 if vim.g.disable_autoformat then
                     return
                 end
 
-                return { timeout_ms = 500, lsp_fallback = true }
+                if slow_format_filetypes[vim.bo[bufnr].filetype] then
+                    return
+                end
+                local function on_format(err)
+                    if err and err:match("timeout$") then
+                        slow_format_filetypes[vim.bo[bufnr].filetype] = true
+                    end
+                end
+
+                return { timeout_ms = 500, lsp_fallback = true }, on_format
             end,
+            format_after_save = function(bufnr)
+                if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+                    return
+                end
+                return { lsp_fallback = true }
+            end,
+            log_level = vim.log.levels.DEBUG,
         },
     },
 }
