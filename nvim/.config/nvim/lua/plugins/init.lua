@@ -2,16 +2,18 @@ return {
     -- Git related plugins
     "tpope/vim-fugitive",
 
-    "tpope/vim-repeat",
-    "tpope/vim-surround",
-    "tpope/vim-commentary",
-    "tpope/vim-sleuth",
+    -- Text manipulation plugins
+    { "tpope/vim-surround", event = "VeryLazy" },
+    { "tpope/vim-repeat", event = "VeryLazy" },
+    { "tpope/vim-commentary", event = "VeryLazy" },
+    { "tpope/vim-sleuth", event = "VeryLazy" },
 
     { "theprimeagen/harpoon" },
 
     -- Colorizer
     {
         "norcalli/nvim-colorizer.lua",
+        event = "VeryLazy",
         config = function()
             require("colorizer").setup()
         end,
@@ -19,6 +21,7 @@ return {
 
     { -- Adds git releated signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
         opts = {
             numhl = true,
             signs = {

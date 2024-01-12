@@ -1,10 +1,11 @@
 return {
-    { "j-hui/fidget.nvim", opts = { progress = { ignore_empty_message = false } } },
-    { "folke/neodev.nvim", opts = {} },
-    { "williamboman/mason.nvim", opts = {} },
-    { "williamboman/mason-lspconfig.nvim", opts = {} },
+    { "j-hui/fidget.nvim", event = "VeryLazy", opts = { progress = { ignore_empty_message = false } } },
+    { "folke/neodev.nvim", event = "VeryLazy", opts = {} },
+    { "williamboman/mason.nvim", event = "VeryLazy", opts = {} },
+    { "williamboman/mason-lspconfig.nvim", event = "VeryLazy", opts = {} },
     {
         "neovim/nvim-lspconfig",
+        event = "VeryLazy",
         dependencies = {
             "folke/neodev.nvim",
             "williamboman/mason.nvim",

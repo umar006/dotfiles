@@ -2,7 +2,7 @@ local slow_format_filetypes = {}
 return {
     {
         "stevearc/conform.nvim",
-        event = { "BufWritePre" },
+        event = { "VeryLazy", "BufWritePre" },
         cmd = { "ConformInfo" },
         opts = {
             formatters = {

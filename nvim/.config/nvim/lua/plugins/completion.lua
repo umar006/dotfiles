@@ -1,6 +1,7 @@
 return {
     {
         "L3MON4D3/LuaSnip",
+        event = "VeryLazy",
         dependencies = {
             "rafamadriz/friendly-snippets",
             config = function()
@@ -21,9 +22,8 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        event = { "VeryLazy", "InsertEnter" },
         dependencies = {
-
             "onsails/lspkind.nvim",
 
             -- cmp sources plugins
