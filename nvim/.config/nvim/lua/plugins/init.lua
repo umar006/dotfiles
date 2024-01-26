@@ -3,10 +3,9 @@ return {
     "tpope/vim-fugitive",
 
     -- Text manipulation plugins
-    { "tpope/vim-surround", event = "VeryLazy" },
-    { "tpope/vim-repeat", event = "VeryLazy" },
-    { "tpope/vim-commentary", event = "VeryLazy" },
-    { "tpope/vim-sleuth", event = "VeryLazy" },
+    { "tpope/vim-surround" },
+    { "tpope/vim-repeat" },
+    { "tpope/vim-commentary" },
 
     { "theprimeagen/harpoon" },
 
