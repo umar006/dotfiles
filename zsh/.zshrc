@@ -26,6 +26,9 @@ alias tls="tmux list-sessions"
 alias tns="tmux new-session -s $(basename $(pwd))"
 alias tas="tmux attach -t"
 
+# use bat instead of cat
+alias cat="bat"
+
 alias dvorak="setxkbmap -layout \"us\" -variant \"dvorak\""
 alias qwerty="setxkbmap -layout \"us\""
 

@@ -10,12 +10,12 @@ end
 
 config.automatically_reload_config = true
 config.enable_tab_bar = false
-config.window_padding = {
-	left = 1,
-	right = 1,
-	top = 1,
-	bottom = 1,
-}
+-- config.window_padding = {
+-- left = 1,
+-- right = 1,
+-- top = 1,
+-- bottom = 1,
+-- }
 config.window_background_opacity = 0.8
 config.window_decorations = "NONE"
 
