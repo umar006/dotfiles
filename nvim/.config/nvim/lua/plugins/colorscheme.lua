@@ -1,4 +1,3 @@
--- [[ Configure Colorscheme ]]
 function ColorMyPencils(color)
     color = color or "gruvbox"
     vim.cmd.colorscheme(color)
@@ -10,26 +9,26 @@ end
 return {
     -- Colorscheme
     { "folke/tokyonight.nvim", event = "VeryLazy" },
-    {
-        "navarasu/onedark.nvim",
-        event = "VeryLazy",
-        opts = {
-            style = "darker",
-            toggle_style_key = "<leader>ots",
-        },
-    },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        event = "VeryLazy",
-        opts = {
-            custom_highlights = function(colors)
-                return {
-                    TreesitterContext = { bg = colors.surface2 },
-                }
-            end,
-        },
-    },
+    -- {
+    --     "navarasu/onedark.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         style = "darker",
+    --         toggle_style_key = "<leader>ots",
+    --     },
+    -- },
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         custom_highlights = function(colors)
+    --             return {
+    --                 TreesitterContext = { bg = colors.surface2 },
+    --             }
+    --         end,
+    --     },
+    -- },
     {
         "ellisonleao/gruvbox.nvim",
         lazy = false,
