@@ -22,35 +22,35 @@ scrolling:
 font:
   size: 12
   offset:
-    x: 0    # For letter spacing (default: 0).
-    y: 3    # For line spacing (default: 0).
+    x: 0 # For letter spacing (default: 0).
+    y: 1 # For line spacing (default: 0).
   # JetBrains
-  # normal:
-  #   family: "JetBrainsMono Nerd Font"
-  #   style: Regular
-  # bold:
-  #   family: "JetBrainsMono Nerd Font"
-  #   style: Bold
-  # italic:
-  #   family: "JetBrainsMono Nerd Font"
-  #   style: Italic
-  # bold_italic:
-  #   family: "JetBrainsMono Nerd Font"
-  #   style: Bold Italic
-
-  # FiraCode
   normal:
-    family: "FiraCode Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Regular
   bold:
-    family: "FiraCode Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Bold
   italic:
-    family: "FiraCode Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Italic
   bold_italic:
-    family: "FiraCode Nerd Font Mono"
+    family: "JetBrainsMono Nerd Font"
     style: Bold Italic
+
+  # FiraCode
+  # normal:
+  #   family: "FiraCode Nerd Font"
+  #   style: Regular
+  # bold:
+  #   family: "FiraCode Nerd Font"
+  #   style: Bold
+  # italic:
+  #   family: "FiraCode Nerd Font"
+  #   style: Italic
+  # bold_italic:
+  #   family: "FiraCode Nerd Font"
+  #   style: Bold Italic
 
 schemes:
   # Catpuccin
@@ -167,4 +167,4 @@ schemes:
 # *catpuccin-mocha
 # *tokyo-night
 # *rose-pine-moon
-colors: *rose-pine-moon
+colors: *tokyo-night
