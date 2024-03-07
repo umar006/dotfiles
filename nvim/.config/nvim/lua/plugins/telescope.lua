@@ -10,22 +10,6 @@ return {
                 build = "make",
             },
         },
-        opts = {
-            defaults = {
-                vimgrep_arguments = {
-                    "rg",
-                    "-L",
-                    "--color=never",
-                    "--no-heading",
-                    "--with-filename",
-                    "--line-number",
-                    "--column",
-                    "--smart-case",
-                },
-                file_ignore_patterns = { "node_modules" },
-                set_env = { ["COLORTERM"] = "truecolor" },
-            },
-        },
         config = function()
             local telescope = require("telescope")
             local builtin = require("telescope.builtin")
