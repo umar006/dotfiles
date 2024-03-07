@@ -33,6 +33,7 @@ return {
             vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
             vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
             vim.keymap.set("n", "<C-p>", builtin.git_files, {})
+            vim.keymap.set("n", "<leader>gst", builtin.git_status, { desc = "[G]it [St]atus" })
             vim.keymap.set("n", "<leader>csc", builtin.colorscheme, { desc = "Choose ColorScheme" })
         end,
     },
