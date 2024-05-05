@@ -12,8 +12,8 @@ return { -- Highlight, edit, and navigate code
 
             auto_install = false,
 
-            highlight = { enable = true, additional_vim_regex_highlighting = false },
-            indent = { enable = true, disable = { "python" } },
+            highlight = { enable = true },
+            indent = { enable = false },
             incremental_selection = {
                 enable = true,
                 keymaps = {
