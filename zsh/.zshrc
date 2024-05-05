@@ -6,6 +6,8 @@ alias install='sudo dnf install'
 alias remove='sudo dnf remove'
 
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 ZSH_THEME="robbyrussell"
 
