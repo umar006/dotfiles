@@ -1,15 +1,14 @@
 return {
-    { "j-hui/fidget.nvim", event = "VeryLazy", opts = { progress = { ignore_empty_message = false } } },
-    { "folke/neodev.nvim", event = "VeryLazy", opts = {} },
-    { "williamboman/mason.nvim", event = "VeryLazy", opts = {} },
-    { "williamboman/mason-lspconfig.nvim", event = "VeryLazy", opts = {} },
     {
         "neovim/nvim-lspconfig",
-        event = "VeryLazy",
         dependencies = {
-            "folke/neodev.nvim",
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
+            { "j-hui/fidget.nvim", opts = {} },
+            {
+                "williamboman/mason.nvim",
+                cmd = { "Mason" },
+                opts = {},
+            },
+            { "williamboman/mason-lspconfig.nvim", opts = {} },
         },
         config = function()
             local document_hightlight = function(client, bufnr)
@@ -46,11 +45,11 @@ return {
             end
 
             local on_attach = function(client, bufnr)
-                document_hightlight(client, bufnr)
+                -- document_hightlight(client, bufnr)
             end
 
-            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
             local mason_lspconfig = require("mason-lspconfig")
 
@@ -63,15 +62,6 @@ return {
                     require("lspconfig")[server_name].setup({
                         capabilities = capabilities,
                         on_attach = on_attach,
-                    })
-                end,
-
-                ["biome"] = function()
-                    local util = require("lspconfig.util")
-                    local lspconfig = require("lspconfig")
-                    lspconfig.biome.setup({
-                        root_dir = util.root_pattern("biome.json"),
-                        single_file_support = false,
                     })
                 end,
 
@@ -88,13 +78,7 @@ return {
                     local lspconfig = require("lspconfig")
                     lspconfig.tsserver.setup({
                         capabilities = capabilities,
-                        on_attach = function(client, bufnr)
-                            document_hightlight(client, bufnr)
-
-                            -- this is important, otherwise tsserver will format ts/js
-                            -- files which we *really* don't want.
-                            client.server_capabilities.documentFormattingProvider = false
-                        end,
+                        on_attach = on_attach,
                         commands = {
                             OrganizeImports = {
                                 organize_imports,
@@ -117,7 +101,6 @@ return {
                                 analyses = {
                                     unusedparams = true,
                                 },
-                                staticcheck = true,
                             },
                         },
                     })
