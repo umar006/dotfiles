@@ -5,7 +5,14 @@ return {
     -- Text manipulation plugins
     { "tpope/vim-surround" },
     { "tpope/vim-repeat" },
-    { "tpope/vim-commentary" },
+    {
+        "tpope/vim-commentary",
+        dependencies = {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+        },
+    },
+    { "tpope/vim-sleuth" },
+
 
     { "theprimeagen/harpoon" },
 
