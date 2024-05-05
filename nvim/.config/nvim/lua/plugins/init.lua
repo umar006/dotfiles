@@ -66,6 +66,15 @@ return {
                     },
                 },
             },
+            tabline = {
+                lualine_c = {
+                    {
+                        "filename",
+                        file_status = true,
+                        path = 2,
+                    },
+                },
+            },
         },
     },
 }
