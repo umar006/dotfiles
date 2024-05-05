@@ -36,7 +36,7 @@ alias sorc="source ~/.zshrc"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
-plugins=(asdf docker git sudo fzf zsh-yarn-completions zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(asdf git sudo fzf zsh-yarn-completions zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
