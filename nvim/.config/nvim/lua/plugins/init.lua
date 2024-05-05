@@ -13,6 +13,13 @@ return {
     },
     { "tpope/vim-sleuth" },
 
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+    },
+
+    { "andweeb/presence.nvim", opts = {} },
 
     { "theprimeagen/harpoon" },
 
@@ -27,7 +34,6 @@ return {
 
     { -- Adds git releated signs to the gutter, as well as utilities for managing changes
         "lewis6991/gitsigns.nvim",
-        event = "VeryLazy",
         opts = {
             numhl = true,
             signs = {
