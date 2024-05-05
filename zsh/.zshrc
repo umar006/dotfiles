@@ -60,3 +60,8 @@ export PATH="$PATH:/home/reborn/.bin"
 # fly.io
 export FLYCTL_INSTALL="/home/reborn/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/home/reborn/.bun/_bun" ] && source "/home/reborn/.bun/_bun"
+
+export PATH="/home/reborn/.cargo/bin:$PATH"
