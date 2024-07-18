@@ -4,7 +4,7 @@ TARGET_DIR=$1
 ZOXIDE_RESULT=$(zoxide query $TARGET_DIR)
 
 if [[ -z $TARGET_DIR ]]; then
-	ZOXIDE_RESULT=$(basename $PWD)
+	ZOXIDE_RESULT=$PWD
 fi
 
 if [[ -z $ZOXIDE_RESULT ]]; then
