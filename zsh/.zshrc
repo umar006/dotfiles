@@ -8,11 +8,15 @@ alias remove='sudo dnf remove'
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export DOTNET_ROOT=$HOME/.dotnet
 
 ZSH_THEME="robbyrussell"
 
 alias v='nvim'
 alias vi='nvim'
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'
+alias chad='NVIM_APPNAME=nvim-nvchad nvim'
+alias min='NVIM_APPNAME=nvim-min nvim'
 
 alias tmc="nvim ~/.config/tmux/tmux.conf"
 alias vrc='cd ~/.config/nvim && nvim .'
@@ -46,8 +50,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
-eval "$(zoxide init zsh)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
@@ -67,3 +69,8 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 [ -s "/home/reborn/.bun/_bun" ] && source "/home/reborn/.bun/_bun"
 
 export PATH="/home/reborn/.cargo/bin:$PATH"
+
+export PATH="$PATH:$HOME/.dotnet"
+export PATH="$PATH:$HOME/.azure/bin"
+
+eval "$(zoxide init zsh)"
