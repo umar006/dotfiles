@@ -24,8 +24,10 @@ end, {
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
+        local bufnr = ev.buf
+
         local nmap = function(keys, func, desc)
-            vim.keymap.set("n", keys, func, { buffer = ev.buf, desc = desc })
+            vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc, silent = true })
         end
 
         nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")

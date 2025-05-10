@@ -4,18 +4,15 @@ vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
-opt.guicursor = ""
-
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
 
 -- -- Set completeopt to have a better completion experience
-opt.completeopt = "menu,menuone,noselect"
+-- opt.completeopt = "menu,menuone,noselect"
 
-opt.tabstop = 4
-opt.shiftwidth = 4
--- opt.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+-- opt.softtabstop = 2
 opt.expandtab = true
 opt.shiftround = true
 opt.smartindent = true
@@ -29,9 +26,9 @@ opt.splitkeep = "screen"
 -- opt.swapfile = false
 -- opt.backup = false
 opt.undofile = true
-opt.undolevels = 10000
+-- opt.undolevels = 10000
 
-opt.hlsearch = false
+-- opt.hlsearch = false
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -57,25 +54,23 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldenable = false
 
 -- Options from lazyvim
-opt.autowrite = true -- Enable auto write
-opt.conceallevel = 3 -- Hide * markup for bold and italic
-opt.confirm = true -- Confirm to save changes before exiting modified buffer
+-- opt.autowrite = true -- Enable auto write
+-- opt.conceallevel = 3 -- Hide * markup for bold and italic
+-- opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
-opt.inccommand = "nosplit" -- preview incremental substitute
-opt.list = false -- Show some invisible characters (tabs...
+-- opt.inccommand = "nosplit" -- preview incremental substitute
+-- opt.list = false -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 -- opt.pumblend = 10 -- Popup blend
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+-- opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
-opt.spelllang = { "en" }
-opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
-opt.wildmode = "longest:full,full" -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
+-- opt.spelllang = { "en" }
+-- opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+-- opt.wildmode = "longest:full,full" -- Command-line completion mode
+-- opt.winminwidth = 5 -- Minimum window width
 
-if vim.fn.has("nvim-0.10") == 1 then
-    opt.smoothscroll = true
-end
+-- opt.smoothscroll = true

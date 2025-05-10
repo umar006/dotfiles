@@ -5,6 +5,7 @@ return {
         dependencies = {
             {
                 "L3MON4D3/LuaSnip",
+                build = "make install_jsregexp",
                 dependencies = {
                     "rafamadriz/friendly-snippets",
                     opts = { history = true, updateevents = "TextChanged,TextChangedI" },
@@ -34,7 +35,7 @@ return {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
         },
-        config = function(_, opts)
+        config = function()
             local has_words_before = function()
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -64,8 +65,8 @@ return {
                     }),
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-                    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+                    -- ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+                    -- ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
                     ["<C-Space>"] = cmp.mapping.complete(),
@@ -96,6 +97,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
+                    -- { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" },
                     { name = "path" },
                 }, {

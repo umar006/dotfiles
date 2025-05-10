@@ -1,6 +1,7 @@
 function ColorMyPencils(color)
     color = color or "gruvbox"
-    vim.cmd.colorscheme(color)
+    -- vim.cmd.colorscheme("zenwritten")
+    vim.cmd.colorscheme("gruvbox")
 
     -- vim.api.nvim_set_hl(0, "VertSplit", { fg = "#7aa2f7" })
     -- vim.api.nvim_set_hl(0, "FloatBorder", { fg = "white" })
@@ -8,27 +9,29 @@ end
 
 return {
     -- Colorscheme
-    { "folke/tokyonight.nvim", event = "VeryLazy" },
-    -- {
-    --     "navarasu/onedark.nvim",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         style = "darker",
-    --         toggle_style_key = "<leader>ots",
-    --     },
-    -- },
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         custom_highlights = function(colors)
-    --             return {
-    --                 TreesitterContext = { bg = colors.surface2 },
-    --             }
-    --         end,
-    --     },
-    -- },
+    {
+        "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            transparent = false,
+            on_highlights = function(hl, c)
+                hl.NormalFloat = {
+                    bg = c.bg_highlight,
+                }
+            end,
+        },
+    },
+    {
+        "maxmx03/solarized.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+        config = function()
+            vim.o.termguicolors = true
+            vim.o.background = "dark"
+        end,
+    },
     {
         "ellisonleao/gruvbox.nvim",
         lazy = false,
@@ -48,19 +51,9 @@ return {
         end,
     },
     {
-        "rose-pine/neovim",
-        event = "VeryLazy",
-        config = function()
-            local transparent = false
-            require("rose-pine").setup({
-                disable_background = transparent or false,
-                disable_float_background = transparent or false,
-                highlight_groups = {
-                    Pmenu = { bg = "surface" },
-                    LspSignatureActiveParameter = { bg = "pine", fg = "text" },
-                    CursorLineNr = { fg = "rose" },
-                },
-            })
-        end,
+        "zenbones-theme/zenbones.nvim",
+        dependencies = "rktjmp/lush.nvim",
+        lazy = false,
+        priority = 1000,
     },
 }

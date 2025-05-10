@@ -1,7 +1,8 @@
 return {
     { -- Fuzzy Finder (files, lsp, etc)
         "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
+        -- branch = "0.1.x",
+        branch = "master",
         dependencies = {
             { "nvim-lua/plenary.nvim", lazy = true },
 
@@ -15,6 +16,7 @@ return {
             local builtin = require("telescope.builtin")
 
             telescope.load_extension("fzf")
+            telescope.load_extension("git_worktree")
 
             vim.keymap.set("n", "<leader>?", builtin.oldfiles, { desc = "[?] Find recently opened files" })
             vim.keymap.set("n", "<leader><space>", builtin.buffers, { desc = "[ ] Find existing buffers" })
@@ -35,6 +37,13 @@ return {
             vim.keymap.set("n", "<C-p>", builtin.git_files, {})
             vim.keymap.set("n", "<leader>gst", builtin.git_status, { desc = "[G]it [St]atus" })
             vim.keymap.set("n", "<leader>csc", builtin.colorscheme, { desc = "Choose ColorScheme" })
+
+            vim.keymap.set(
+                "n",
+                "<leader>gwt",
+                telescope.extensions.git_worktree.git_worktrees,
+                { desc = "[G]it [W]ork[t]ree list" }
+            )
         end,
     },
 }
