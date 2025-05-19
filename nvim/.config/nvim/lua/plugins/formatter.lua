@@ -28,23 +28,27 @@ return {
                     command = "csharpier",
                     args = { "format", "--write-stdout" },
                 },
+                ["biome-check"] = {
+                    require_cwd = true,
+                },
+                ["biome-organize-imports"] = {
+                    require_cwd = true,
+                },
             },
             formatters_by_ft = {
                 cs = { "csharpier" },
                 lua = { "stylua" },
                 html = { "prettier", "prettierd" },
                 css = { "prettier" },
-                javascript = { "biome", "biome-check", "biome-organize-imports", "prettierd", stop_after_first = true },
+                javascript = { "biome-check", "biome-organize-imports", "prettierd", stop_after_first = true },
                 javascriptreact = {
-                    "biome",
                     "biome-check",
                     "biome-organize-imports",
                     "prettierd",
                     stop_after_first = true,
                 },
-                typescript = { "biome", "biome-check", "biome-organize-imports", "prettierd", stop_after_first = true },
+                typescript = { "biome-check", "biome-organize-imports", "prettierd", stop_after_first = true },
                 typescriptreact = {
-                    "biome",
                     "biome-check",
                     "biome-organize-imports",
                     "prettierd",
