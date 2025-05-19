@@ -16,22 +16,6 @@ return {
     { "ThePrimeagen/git-worktree.nvim" },
 
     {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        config = function()
-            require("ts_context_commentstring").setup({
-                enable_autocmd = false,
-            })
-
-            local get_option = vim.filetype.get_option
-            vim.filetype.get_option = function(filetype, option)
-                return option == "commentstring"
-                        and require("ts_context_commentstring.internal").calculate_commentstring()
-                    or get_option(filetype, option)
-            end
-        end,
-    },
-
-    {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
@@ -115,6 +99,22 @@ return {
             -- Example keybindings
             vim.keymap.set({ "n", "i" }, "<A-i>", '<CMD>lua require("FTerm").toggle()<CR>')
             vim.keymap.set("t", "<A-i>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+        end,
+    },
+
+    {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = {
+            enable_autocmd = false,
+        },
+    },
+
+    {
+        "numToStr/Comment.nvim",
+        config = function()
+            require("Comment").setup({
+                pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+            })
         end,
     },
 }
