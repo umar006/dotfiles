@@ -74,3 +74,9 @@ export PATH="$PATH:$HOME/.dotnet"
 export PATH="$PATH:$HOME/.azure/bin"
 
 eval "$(zoxide init zsh)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="/home/reborn/.npm-global/bin:$PATH"
