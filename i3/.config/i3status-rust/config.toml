@@ -8,11 +8,26 @@ separator=""
 
 [[block]]
 block = "disk_space"
-# format = " $icon $available "
+format = " root $icon $available "
 warning = 5
 interval = 30
 [block.theme_overrides]
 idle_bg = "#076678"
+[[block.click]]
+button = "right"
+update = true
+
+[[block]]
+block = "disk_space"
+path = "/home/reborn/"
+format = " home $icon $available "
+warning = 5
+interval = 30
+[block.theme_overrides]
+idle_bg = "#076678"
+[[block.click]]
+button = "right"
+update = true
 
 [[block]]
 block = "memory"
