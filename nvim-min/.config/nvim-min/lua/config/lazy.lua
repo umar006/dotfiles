@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -34,7 +34,7 @@ vim.schedule(function()
 end)
 o.cursorline = true
 o.cursorlineopt = "number"
-o.scrolloff = 10
+o.scrolloff = 8
 
 -- Indenting
 o.expandtab = true

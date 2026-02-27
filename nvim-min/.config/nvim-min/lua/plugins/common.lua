@@ -55,10 +55,10 @@ return {
       }
       -- REQUIRED
 
-      vim.keymap.set("n", "<leader>a", function()
+      vim.keymap.set("n", "<leader>H", function()
         harpoon:list():add()
       end)
-      vim.keymap.set("n", "<leader>e", function()
+      vim.keymap.set("n", "<leader>h", function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
@@ -101,5 +101,15 @@ return {
         harpoon:list():next()
       end)
     end,
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {
+      scope = { enabled = false },
+    },
   },
 }

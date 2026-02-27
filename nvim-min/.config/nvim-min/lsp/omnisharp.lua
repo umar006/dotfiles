@@ -51,7 +51,7 @@ return {
       EnableEditorConfigSupport = true,
       -- Specifies whether 'using' directives should be grouped and sorted during
       -- document formatting.
-      OrganizeImports = nil,
+      OrganizeImports = true,
     },
     MsBuild = {
       -- If true, MSBuild project system will only load projects for files that
@@ -71,12 +71,12 @@ return {
       -- have a negative impact on initial completion responsiveness,
       -- particularly for the first few completion sessions after opening a
       -- solution.
-      EnableImportCompletion = nil,
+      EnableImportCompletion = true,
       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
       -- true
       AnalyzeOpenDocumentsOnly = nil,
       -- Enables the possibility to see the code in external nuget dependencies
-      EnableDecompilationSupport = nil,
+      EnableDecompilationSupport = true,
     },
     RenameOptions = {
       RenameInComments = nil,
@@ -86,7 +86,7 @@ return {
     Sdk = {
       -- Specifies whether to include preview versions of the .NET SDK when
       -- determining which version to use for project loading.
-      IncludePrereleases = true,
+      IncludePrereleases = false,
     },
   },
 }

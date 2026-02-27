@@ -1,5 +1,8 @@
 return {
   {
+    "Hoffs/omnisharp-extended-lsp.nvim",
+  },
+  {
     "folke/lazydev.nvim",
     ft = "lua",
     opts = {
@@ -24,6 +27,25 @@ return {
       require("mason-lspconfig").setup {
         ensure_installed = lspList,
         automatic_enable = true,
+        handlers = {
+          -- Default handler for other servers
+          function(server_name)
+            require("lspconfig")[server_name].setup {}
+          end,
+
+          -- Specific override for OmniSharp
+          ["omnisharp"] = function()
+            require("lspconfig").omnisharp.setup {
+              -- Your specific handlers for omnisharp_extended
+              handlers = {
+                ["textDocument/definition"] = require("omnisharp_extended").definition_handler,
+                ["textDocument/typeDefinition"] = require("omnisharp_extended").type_definition_handler,
+                ["textDocument/references"] = require("omnisharp_extended").references_handler,
+                ["textDocument/implementation"] = require("omnisharp_extended").implementation_handler,
+              },
+            }
+          end,
+        },
       }
 
       vim.api.nvim_create_autocmd("LspAttach", {
